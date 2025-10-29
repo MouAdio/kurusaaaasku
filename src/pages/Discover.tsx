@@ -32,7 +32,7 @@ export default function Discover() {
   const [tokens, setTokens] = useState<Token[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isLite, setIsLite] = useState(true);
+  const [isLite, setIsLite] = useState(false); // Pro mode on Discover
   const [activeTab, setActiveTab] = useState('all');
 
   useEffect(() => {
@@ -104,7 +104,7 @@ export default function Discover() {
                 <Button
                   variant={isLite ? 'default' : 'outline'}
                   size="sm"
-                  onClick={() => setIsLite(true)}
+                  onClick={() => { setIsLite(true); navigate("/"); }}
                   className={isLite ? 'bg-[#a3e635] hover:bg-[#a3e635]/90 text-black' : 'border-gray-700 text-gray-400'}
                 >
                   Lite
@@ -112,7 +112,7 @@ export default function Discover() {
                 <Button
                   variant={!isLite ? 'default' : 'outline'}
                   size="sm"
-                  onClick={() => setIsLite(false)}
+                  onClick={() => { setIsLite(false); navigate("/discover"); }}
                   className={!isLite ? 'bg-gray-700 hover:bg-gray-600' : 'border-gray-700 text-gray-400'}
                 >
                   Pro

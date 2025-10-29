@@ -243,7 +243,7 @@ export default function Trade() {
                 <Button
                   variant={!isLite ? 'default' : 'ghost'}
                   size="sm"
-                  onClick={() => setIsLite(false)}
+                  onClick={() => { setIsLite(false); navigate("/discover"); }}
                   className={!isLite ? 'bg-gray-700 hover:bg-gray-600 h-8 px-4 rounded-full' : 'text-gray-400 hover:text-white h-8 px-4'}
                 >
                   Pro
